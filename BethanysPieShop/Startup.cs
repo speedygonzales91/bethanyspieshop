@@ -36,10 +36,10 @@ namespace BethanysPieShop
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{Controller=Home}/{Action=Index}/{id?}"
+                    );
             });
         }
     }
